@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "expense-flow-205",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,6 +18,8 @@
     "android": {
       "package": "com.huoder94.expenseflow205"
     },
-    "plugins": []
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
