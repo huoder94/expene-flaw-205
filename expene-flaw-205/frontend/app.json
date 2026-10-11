@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Expense Flow 205",
+    "slug": "expense-flow-205",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.huoder94.expenseflow205"
+    },
+    "plugins": []
+  }
+}
