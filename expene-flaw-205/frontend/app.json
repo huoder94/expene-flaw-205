@@ -1,24 +1,38 @@
 {
   "expo": {
     "name": "Expense Flow 205",
-    "slug": "despesashuoder",
-    "owner": "huoder94s-team",
+    "slug": "expene-flaw-205",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "expenseflow",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.huoder.expenseflow205"
     },
     "android": {
-      "package": "com.huoder94.expenseflow205"
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f172a"
+      },
+      "package": "com.huoder.expenseflow205"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router"
     ],
-    "extra": {
-      "eas": {
-        "projectId": "979f908c-6bf0-4d8c-b9fd-dfa9356a6430"
-      }
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
