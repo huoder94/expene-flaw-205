@@ -28,29 +28,31 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install dependencies
+      - name: Locate Frontend and Install Dependencies
         run: |
           if [ -d "expene-flaw-205/frontend" ]; then
-            cd expene-flaw-205/frontend
+            TARGET_DIR="expene-flaw-205/frontend"
           elif [ -d "frontend" ]; then
-            cd frontend
+            TARGET_DIR="frontend"
+          elif [ -f "package.json" ]; then
+            TARGET_DIR="."
+          else
+            echo "Pasta do projeto não encontrada!"
+            exit 1
           fi
+          echo "TARGET_DIR=$TARGET_DIR" >> $GITHUB_ENV
+          cd $TARGET_DIR
           npm install
 
-      - name: Build Android APK with EAS
+      - name: Build Android APK with EAS Local
         run: |
-          if [ -d "expene-flaw-205/frontend" ]; then
-            cd expene-flaw-205/frontend
-          elif [ -d "frontend" ]; then
-            cd frontend
-          fi
+          cd ${{ env.TARGET_DIR }}
           npx eas-cli build --platform android --profile preview --local --output ./app-release.apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release
+          name: ExpenseFlow205-APK
           path: |
-            expene-flaw-205/frontend/app-release.apk
-            frontend/app-release.apk
+            ${{ env.TARGET_DIR }}/app-release.apk
             app-release.apk
