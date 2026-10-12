@@ -2,6 +2,7 @@
   "expo": {
     "name": "Expense Flow 205",
     "slug": "expene-flaw-205",
+    "owner": "huoder94s-team",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
